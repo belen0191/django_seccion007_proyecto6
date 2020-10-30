@@ -1,0 +1,38 @@
+{% extends "web/plantilla.html" %}
+{% load static %} 
+               
+
+    {% block contenido %} 
+        <header class="header" id="inicio" style="height: 30%;">
+            <img src="{% static 'img/hamburguesa.svg' %}" alt="" class="hamburger">
+            <div class="contenedor head">
+                <h1 class="titulo" style="color: whitesmoke;">Lavado de Autos Farkas</h1>
+                <h1 class="titulo" style="color: whitesmoke;">Dejamos tu Auto como Nuevo</h1>
+                <p class="copy" style="color: whitesmoke;">Expertos en la limpieza de autos </p>
+        </div>
+        </header>
+        {% block estilos %}
+            <link rel="stylesheet" href="{% static 'css/gallery.css' %}"> 
+            {% endblock estilos %}            
+
+            <section class="gallery" id="galeria">
+                <div class="contenedor">
+                    <h2 class="subtitulo">Galeria</h2>
+                    <div class="contenedor-galeria">
+                        {% for item in ImgGaleria  %}
+                            <li><img class="img-galeria" src= "{{item.imagen2.url}} " alt=""  ></li>                            
+                        {% endfor %}
+                    
+                    </div>
+                </div>
+            </section>
+            <section class="imagen-light">
+                <img src="{% static 'img/closelight.svg' %}" alt="" class="close">
+                <img src=""  class="agregar-imagen">
+            </section>
+        
+        {% block js%}
+            <script src="{% static 'js/ligthbox.js' %}"></script>
+        {%endblock js%}
+            
+    {% endblock contenido%}

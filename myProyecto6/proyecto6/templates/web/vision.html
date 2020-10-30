@@ -1,0 +1,46 @@
+{% extends "web/plantilla.html" %}
+{% load static %}
+{% block contenido %}
+    <header class="header" id="inicio">
+        <img src="{% static 'img/hamburguesa.svg' %}" alt="" class="hamburger">
+         <div class="contenedor head">
+            <h1 class="titulo">Lavado de Autos Farkas</h1>
+            <h1 class="titulo">Dejamos tu Auto como Nuevo</h1>
+            <p class="copy">Expertos en la limpieza de autos </p>
+
+        </div>
+    </header>
+
+    {% for item  in myv %}
+
+        <section class="contenedor" id="expertos">
+            <h2 class="subtitulo">Nuestra Mision y vision</h2>
+            <section class="experts">
+                <div class="cont-expert">
+                    <img src="{% static 'img/car.svg' %}" alt="">
+                    <h3 class="n-expert"> Nuestra Vision:</h3>
+                        <h3>{{item.vision}}</h3>
+                </div>
+
+                <div class="experts">
+                    <div class="cont-expert">
+                        <img src="{% static 'img/car_two_color.svg' %}" alt="">
+                        <h3 class="n-expert">Nuestra Mision:</h3>
+                        <h3>{{item.mision}}</h3>
+
+                    </div>
+                </div>
+            </section>
+        </section>
+    {% endfor %}
+
+    <section class="contenedor" id="ubicacion">
+        <div class="contenedor-ubicacion">
+            <h2 class="subtitulo">Nuestras Sucursales</h2>
+            <p class="copy">Horario Atencion : <b> 8:00 Hasta 19:00</b> Lunes A Domingo</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.277160620573!2d-70.5804858847968!3d-33.598112480731864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d703a6cae9b7%3A0xc7fdbbad1d7ad081!2sAv.%20Concha%20Y%20Toro%201340%2C%20Puente%20Alto%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1598479312562!5m2!1ses-419!2scl" width="98%" height="350px" frameborder="0"  allowfullscreen="" aria-hidden="false" tabindex=""   ></iframe>
+            <p class="copy">Mapa De Nuestra Ubicacion </p>
+        </div>
+    </section>
+
+{% endblock contenido%}

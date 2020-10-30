@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavado de Autos Farkas</title>
+    <link rel="shortcut icon" href="{% static 'img/car.svg' %}" type="image/x-icon">
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/estiloSlider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estiloTabla.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    
+</head>
+<body>    
+        <nav class="menu-navegacion">
+            
+            <a href="{% url 'IND' %}">Inicio</a>
+             {% if user.is_authenticated %}
+                <a href="">Bienvenido {{user.first_name}} {{user.last_name}}</a>
+                <a href="{% url 'LOGOUT' %}">Cerrar Sesion</a>
+            {% else %}
+                <a href="{% url 'LOG' %}#InicioSesion">Inicio Sesion</a>
+            {% endif %}
+            <a href="{% url 'IND' %}#servicio">Servicios</a>
+            <a href="{% url 'IND' %}#precios">Nuestros precios </a>
+            <a href="{% url 'SERV' %}#producto">Nuestro Catalogo </a>
+            <a href="{% url 'REG' %}#formulario2">Registro Productos </a>
+            <a href="{% url 'IND' %}#cliente">Nuestros Clientes</a>
+            <a href="{% url 'GALE' %}#galeria">Galeria</a>
+            <a href="{% url 'VIS' %}#expertos">Vision y Mision</a>
+            <a href="{% url 'IND' %}#ubicacion">Ubicacion</a>
+            <a href="{% url 'FORM' %}#formulario">Formulario Registro</a>
+           
+        </nav>
+
+    {% block contenido %}
+        
+    {% endblock contenido%}
+
+    
+    <footer id="contacto">
+        <div class="contenedor footer-content">
+           <div class="contact-us">
+               <h2 class="brand">Los locos del Software</h2>
+               <p>Somos expertos en desarrollo web</p>
+
+            </div>
+            <div class="social-media">
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-facebook' ></i>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-twitter' ></i>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-instagram' ></i>
+                </a>
+           </div>
+        </div>
+            <div class="line"></div>
+    </footer>
+ 
+      <script src="{% static 'js/menu.js' %}"></script>
+      <script src="{% static 'js/cliente.js' %}"></script>
+      <script src="{% static 'js/script.js' %}"></script>
+      
+
+
+
+
+
+</body>
+</html>

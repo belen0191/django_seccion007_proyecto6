@@ -1,0 +1,46 @@
+{% extends "web/plantilla.html" %}
+{% load static %}
+    {% block contenido %}   
+        <header class="header" id="inicio" style="height: 30%;">
+            <img src="{% static 'img/hamburguesa.svg' %}" alt="" class="hamburger">
+            <div class="contenedor head">
+                <h1 class="titulo" style="color: whitesmoke;">Lavado de Autos Farkas</h1>
+                <h1 class="titulo" style="color: whitesmoke;">Dejamos tu Auto como Nuevo</h1>
+                <p class="copy" style="color: whitesmoke;">Expertos en la limpieza de autos </p>
+          </div>
+        </header>
+        {% block estilos %}
+            <link rel="stylesheet" href="{% static 'css/form.css' %}">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        {% endblock estilos %}    
+            <script>
+                function ir() {
+                    location.href ='/lista_insumos/';
+                    
+                }
+            </script>
+            <div class="contenedor">
+                <form action="{% url 'REG' %}" method="POST" class="contenedor"  id="formulario2"  onsubmit="return validarTodo()" >
+                    {% csrf_token %}
+                    <h1 class ="titulo2" style="color: white; text-align: center;  padding:1%" >Registro de Productos Utilizados</h1>
+                    
+                    <!--INPUTS-->
+                    <input class="cajas" type="text" placeholder="Nombre del Producto" minlength="3" name="txtNombre" maxlength="120" id="txtNombre" style="padding: 3px; width: 45%;" required>
+                    <input class="cajas" type="text" placeholder="Precio" minlength="1" name="txtPrecio" maxlength="6" id="txtPrecio" style="padding: 3px; width: 45%;" required>
+                    <input class="cajas" type="text" placeholder="Descripcion" minlength="3" name="txtDescripcion" maxlength="200" id="txtDescripcion" style="padding: 3px; width: 45%; "  required>
+                    <input class="cajas" type="text" placeholder="Stock" minlength="1" name="txtStock" maxlength="6" id="txtStock" style="padding: 3px; width: 45%;"  required>
+                    
+                    <input class="btn btn-primary" type="submit"  value="Guardar"style="width: 30%;float:inline-start;" >    
+                    <input class="btn btn-primary" type="reset" value="Limpiar"style="width: 30%;float: inline-start;">
+                    <input class="btn btn-primary" type="button"onclick="ir()" value="Admin_productos" style="width: 30%;float: inline-start;">
+
+                </form>
+            </div>
+            <div style="text-align: center;color: blue;background-color:white;">
+                <h2>{{msg}}</h2>
+            </div>
+
+            {% block js %}
+            <script src="{% static 'js/Producto.js' %}"></script>
+            {% endblock js %}
+    {% endblock contenido%}

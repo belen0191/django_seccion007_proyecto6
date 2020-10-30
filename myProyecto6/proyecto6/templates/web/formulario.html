@@ -1,0 +1,48 @@
+{% extends "web/plantilla.html" %}
+{% load static %}       
+    {% block contenido%}
+        <header class="header" id="inicio" style="height: 30%;">
+            <img src="{% static 'img/hamburguesa.svg' %}" alt="" class="hamburger">
+            <div class="contenedor head">
+                <h1 class="titulo" style="color: whitesmoke;">Lavado de Autos Farkas</h1>
+                <h1 class="titulo" style="color: whitesmoke;">Dejamos tu Auto como Nuevo</h1>
+                <p class="copy" style="color: whitesmoke;">Expertos en la limpieza de autos </p>
+        </div>
+        </header>
+
+        {% block estilos %}
+            <link rel="stylesheet" href="{% static 'css/form.css' %}">
+            
+        
+        {% endblock estilos %}
+
+            <div class="contenedor " >
+                <h1 style="color:skyblue;">Registro de Clientes</h1>
+                    
+                    <form action="" method="POST" class="contenedor"  id="formulario" onsubmit= "return validarTodo()">
+                    {% csrf_token %}
+                        <h1 class ="titulo2" style="color: white; text-align: center; text-decoration: skyblue;">Ingresa tus Datos</h1>
+                        
+                        <!--INPUTS-->
+                        <input class="cajas" type="text" placeholder="Nombre" minlength="3" name="txtNombre" maxlength="80" id="txtNombre" style="padding: 3px; width: 45%;" required>
+                        <input class="cajas" type="text" placeholder="Apellido" minlength="3" name="txtApellido" maxlength="80" id="txtApellido" style="padding: 3px; width: 45%;"  required>
+                        <input class="cajas" type="email" placeholder="Correo electrónico" name="txtCorreo" id="txtCorreo"  style="padding: 3px; width: 45%;" required>
+                        <input class="cajas" type="text" placeholder="Nombre Usuario" minlength="8" name="txtNombreUsuario" maxlength="80" id="txtNombreUsuario" style="padding: 3px; width: 45%;" required>
+                        <input class="cajas" type="password" placeholder="Contraseña" minlength="2" maxlength="8" name="txtPass1" id="txtPass1" style="padding: 3px; width: 45%;" required>
+                        <input class="cajas" type="password" placeholder="Repita Contraseña" minlength="2" maxlength="8" name="txtPass2" id="txtPass2" style="padding: 3px; width: 45%;" required>
+                       
+                        <!--TERMINOS-Y-CONDICIONES-->
+                        <p class="termino-1" style="color: whitesmoke; text-align:center;" ><input type="checkbox" required>&nbsp; Estoy de acuerdo con los <a class="termino-2" style="color:aqua;" href="" >Terminos y Condiciones</a></p>
+                        
+                        <!--BOTON-DE-REGISTRARSE-->
+                        <input class="btn" type="submit" value="Enviar" style="width: 45%; float: inline-start;" >
+                        <input class="btn" type="reset" value="Limpiar" style="width: 45%;float: inline-start; "  >
+                    
+                    </form>
+                    <div style="text-align: center;color: blue;background-color:white;">
+                        <h2>{{msg}}</h2>
+                    </div>
+            </div>
+
+
+    {% endblock contenido %}

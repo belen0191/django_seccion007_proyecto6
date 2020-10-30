@@ -1,0 +1,66 @@
+{% extends "web/plantilla.html" %}
+{% load static %}
+{% block contenido %}
+    <header class="header" id="inicio">
+        <img src="{% static 'img/hamburguesa.svg' %}" alt="" class="hamburger">
+         <div class="contenedor head">
+            <h1 class="titulo">Lavado de Autos Farkas</h1>
+            <h1 class="titulo">Dejamos tu Auto como Nuevo</h1>
+            <p class="copy">Expertos en la limpieza de autos </p>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="imagen-light">
+            <img src="{% static 'img/closelight.svg' %}" alt="" class="close">
+            <img src="" alt="" class="agregar-imagen">
+        </section>
+
+        <h2 class="subtitulo">Nuestro Catalogo</h2>
+        <div class="contenedor2" id="producto">
+            <div class="tabla" >
+                <h2>Kit Lavado</h2>
+                <img src="{% static 'img3/p7kit.jpg' %}" alt="">
+                <h3>$9.990</h3>
+                <a href="#contacto" class="boton" >Agregar al Carrito</a>
+            
+            </div>
+            <div class="tabla" >
+                <h2>Cera Sintetica</h2>
+                <img src="{% static 'img3/2pcerasintetica.jpg' %}" alt="">
+                <h3>$5.990</h3>
+                <a href="#contacto" class="boton" >Agregar al Carrito </a>
+            </div>
+            <div class="tabla" >
+                <h2>Pasta para Pulir</h2>
+                <img src="{% static 'img3/p3pastapulir.jpg' %}" alt="">
+                <h3>$4.990</h3>
+                <a href="#contacto" class="boton" >Agregar al Carrito  </a>
+            </div>
+            <div class="tabla" >
+                <h2>Pulidor de Foco</h2>
+                <img src="{% static 'img3/p4pulidor de focos.jpg' %}" alt="">
+                <h3>$2.990</h3>
+                <a href="#contacto" class="boton" >Agregar al Carrito  </a>
+            </div>
+            <div class="tabla" >
+                <h2> Shampoo para Vehiculo</h2>
+                <img src="{% static 'img3/p6shampooo.jpg' %}" alt="">
+                <h3>$5.990</h3>
+                <a href="#contacto" class="boton" >Agregar al Carrito </a>
+            </div>
+            <div class="tabla" >
+                <h2>Kit Lavado</h2>
+                <img src="{% static 'img3/p8kit2.jpg' %}" alt="">
+                <h3>$15.000</h3>
+                <a href="#contacto" class="boton" >Agregar al Carrito</a>
+            </div>  
+
+        
+
+        </div>   
+    </main>
+    
+
+{% endblock contenido%}

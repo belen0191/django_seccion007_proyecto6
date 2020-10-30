@@ -1,0 +1,32 @@
+{% extends "web/plantilla.html" %}
+{% load static %}       
+{% block contenido%}
+    <img src="{% static 'img/hamburguesa.svg' %}" alt="" class="hamburger">
+
+    {% block estilos %}
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    {% endblock estilos %}
+
+        <div class="contenedor">
+            <h1 class ="titulo2" style="color:white; width:35%; aling=center">   Inicio de Sesion </h1>
+                
+            <form action="{% url 'LOG' %}" method="POST" class="contenedor"  id="InicioSesion" onsubmit= "return validarTodo()">
+            {% csrf_token %}
+                <h1 class ="titulo2" style="color:white; width:35%;">Ingresa tus Datos</h1>
+                    
+                    <!--INPUTS-->
+                <input class="cajas" type="text" placeholder="Nombre Usuario" minlength="8" name="txtNombreUsuario" maxlength="80" id="txtNombreUsuario" style="padding: 3px; width: 45%;" required>
+                <input class="cajas" type="password" placeholder="Contraseña" minlength="2" maxlength="8" name="txtPass" id="txtPass" style="padding: 3px; width: 45%;" required>
+                                        
+                    <!--BOTON-DE-REGISTRARSE-->
+                <input class="btn" type="submit" value="Ingresar" >
+                <input class="btn" type="reset" value="Limpiar">
+                
+            </form>
+            <div style="text-align: center;color:blue;background-color:white;">
+                <h2>{{msg}}</h2>
+            </div>
+                
+        </div>
+
+{% endblock contenido%}

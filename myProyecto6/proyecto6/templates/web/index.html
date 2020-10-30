@@ -1,0 +1,122 @@
+{% extends "web/plantilla.html" %}
+{% load static %}
+   
+{% block contenido %}
+    <header class="header" id="inicio">
+        <img src="{% static 'img/hamburguesa.svg' %}" alt="" class="hamburger">
+         <div class="contenedor head">
+            <h1 class="titulo">Lavado de Autos Farkas</h1>
+            <h1 class="titulo">Dejamos tu Auto como Nuevo</h1>
+            <p class="copy">Expertos en la limpieza de autos </p>
+
+        </div>
+    </header>
+     <!-- carrousel -->
+    <div class="slider">
+
+        <ul>
+            {% for item in autos  %}
+            <li><img src=  "{{item.imagen.url}} " alt="" style="height: 400px;" ></li>
+            {% endfor %}
+        </ul>
+    </div>
+        <main>
+            <section class="contenedor" id="servicio">
+                <h2 class="subtitulo">Nuestros Servicios</h2>
+                <div class="contenedor-servicio">
+                    <img src="{% static 'img/servicio.jpg' %}" alt="">
+                        <div class="servicio-servicio">
+                            <div class="service">
+                            <h3 class="n-service"><span class="number">1</span>Lavado Completo</h3>
+                                <p>Nos dedicamos a darle el mejor lavado a tu vehiculo tanto por el exterior como la limpieza que le damos al interior,
+                                    nuestro lavado ocupa los mejores productos de limpieza dando asi un mejor sevicio para tu auto
+                                </p>
+                            </div>    
+                        </div>
+                        <div class="service">
+                        <h3 class="n-service"><span class="number">2</span>Aspirado Completo</h3>
+                            <p>Hacemos un aspirado completo dando asi una mejor experiencia y un servicio mas completo 
+                                ademas de dejar tu auto impecable </p>
+                        </div>
+                        
+                        <div class="service">
+                        <h3 class="n-service"><span class="number">3</span>Sanitizacion </h3>
+                            <p>En estos tiempos de pandemia adaptamos nuestros servicios para asi poder ofrecer la Sanitizacion,
+                                para que tu como cliente este seguro y tranquilo dentro de tu auto
+                            </p>
+                        </div>
+                        <div class="service">
+                        <h3 class="n-service"><span class="number">4</span>Atencion Personalizada</h3>
+                            <p>Nuestra atencion es personalizada dado que contamos un agendamiento de hora donde tambien podra 
+                                agregar los servicios que necesita,todos nuestros productos son de la mas alta calidad 
+                            </p>
+                        </div>
+                </div>
+            </section>
+    
+                <h2 class="subtitulo">Nuestros Precios</h2>
+                <div class="contenedor2" id="precios">
+                    <div class="tabla" >
+                    <h2>Lavado Completo</h2>
+                        <img src="{% static 'img2/v4.jpg' %}" alt="">
+                        <h3>$21.990</h3>
+                        <a href="{% url 'FORM' %}#formulario" class="boton" >Registrate y reserva  </a>
+                    </div>
+                    <div class="tabla hover">
+                    <h2>Aspirado Completo</h2>
+                        <img src="{% static 'img2/s4.jpg' %}" alt="">
+                        <h3>$10.990</h3>
+                        <a href="{% url 'FORM' %}#formulario" class="boton" >Registrate y reserva</a>
+                    </div>
+                    <div class="tabla">
+                    <h2>Sanitizacion Completa</h2>
+                        <img src="{% static 'img2/s3.jpg' %}" alt="">
+                        <h3>$23.990</h3>
+                        <a href="{% url 'FORM' %}#formulario" class="boton" >Registrate y reserva</a>
+                
+                    </div>
+                    
+                </div>
+        
+                <section class="imagen-light">
+                    <img src="{% static 'img/closelight.svg' %}" alt="" class="close">
+                    <img src="" alt="" class="agregar-imagen">
+                </section>
+            
+        
+            <section class="contenedor" id="cliente">
+                <h2 class="subtitulo">Nuestros clientes</h2>
+                <div class="contenedor-cliente">
+                    <img src="{% static 'img/cliente.jpg' %}" alt="">
+                    <div class="cliente-cliente">
+                        <div class="client">
+                            <h3 class="n-client"><span class="numbers">1</span>Nuestros Clientes Opinan</h3>
+                            <p>Me encanto el servicio,sin duda volvere a traer mi auto, quede muy conforme,los recomiendo 100%, no se arrepentiran.</p>
+                        </div>
+                        <div class="client">
+                            <h3 class="n-client"><span class="numbers">2</span>Nuestros Clientes Opinan</h3>
+                            <p>Me habian recomendado este lavado de auto pero no creia que fuera tan bueno, pero con la forma que me atendieron y 
+                                como dejaron mi auto creanme que tienen una clienta fiel a su lavado de autos sin duda el mejor dejaron mi auto como nuevo.
+                            </p>
+                        </div>
+                        <div class="client">
+                            <h3 class="n-client"><span class="numbers">3</span>Nuestros Clientes Opinan</h3>
+                            <p>Me he dado cuenta que este lavado de autos sin dudar es el mejor que he podido visitar,la atencion es buenisima,me siento muy segura
+                                y tranquila dejando mi auto aca en esta empresa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+
+    <section class="contenedor" id="ubicacion">
+        <div class="contenedor-ubicacion">
+        <h2 class="subtitulo">Nuestras Sucursales</h2>
+        <p class="copy">Horario Atencion : <b> 8:00 Hasta 19:00</b> Lunes A Domingo</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.277160620573!2d-70.5804858847968!3d-33.598112480731864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d703a6cae9b7%3A0xc7fdbbad1d7ad081!2sAv.%20Concha%20Y%20Toro%201340%2C%20Puente%20Alto%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1598479312562!5m2!1ses-419!2scl" width="98%" height="350px" frameborder="0"  allowfullscreen="" aria-hidden="false" tabindex=""   ></iframe>
+        <p class="copy">Mapa De Nuestra Ubicacion </p>
+    </section>
+
+{% endblock contenido %}
