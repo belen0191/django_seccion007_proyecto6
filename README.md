@@ -1,7 +1,7 @@
 # django_seccion007_proyecto6
 <h1> Informe de Test Pruebas <h1>
 
-<title>lavado de autos</title>
+<h1>lavado de autos</h1>
 
 nosotros como equipo "Locos  del Software" as GrupoN°1
 
